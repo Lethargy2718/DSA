@@ -1,11 +1,7 @@
 import sys
 
 def binary_search(target, data: list):
-    """
-    O(logn)
-    max tries = log2(n) rounding up
-
-    """
+    # O(logn)
     low  = 0
     high = len(data) - 1
     tries = 0
