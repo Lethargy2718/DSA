@@ -3,7 +3,7 @@ from random import randint
 def quicksort_genexp(arr):
     """
     I used a generative expression like the book but picked a random number
-    as the pivot for an average complexity of O(nlogn) instead of O(n^2)
+    as the pivot for an average complexity of O(nlogn) instead of the O(n^2)
     obtained when always picking the first number as the pivot.
     """
     if len(arr) < 2:
