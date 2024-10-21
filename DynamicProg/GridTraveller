@@ -1,4 +1,10 @@
 def gridTraveller(m,n, dp = {}):
+    """
+    The legal moves are right and down. For an mxn
+    grid, find the number of possible ways to move from the
+    top left corner of the grid to the bottom right corner
+    using recursion and dynamic programming.
+    """
     if (m,n) in dp:
         return dp[(m,n)]
     if m == n == 1:

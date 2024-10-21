@@ -1,6 +1,9 @@
 import sys
 
 def fib(n):
+    """
+    Fibonacci sequence using memoization.
+    """
     if n <= 2:
         return 1
     

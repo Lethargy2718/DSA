@@ -1,4 +1,9 @@
 def climbStairsDP(n, dp = {}):
+    """
+    If you can climb 1 or 2 stairs at a time, find the number
+    of possible ways to climb n stairs using recursion and
+    dynamic programming.
+    """
     if n in dp:
         return dp[n]
     if n == 0:
