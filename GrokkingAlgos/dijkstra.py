@@ -39,6 +39,9 @@ parents["fin"] = None
 
 
 def pick_closest_node(costs, processed):
+    """
+    Picks the cheapest node based on costs and processed nodes.
+    """
     lowest_cost = infinity
     closest = None
     for node in costs.keys():
@@ -49,13 +52,17 @@ def pick_closest_node(costs, processed):
 
 
 def dijkstra(graph, costs, parents):
+    """
+    An application of dijkstra to find the shortest path
+    to each node in the graph.
+    """
     processed = []
     node = pick_closest_node(costs, [])
     while node:
         cost = costs[node]
         for neighbor in graph[node].keys():
             # new_cost = cost to reach the node i am currently at + cost for NEXT node.
-            #processed nodes are those whose neighbors have been checked
+            # Processed nodes are those whose neighbors have been checked.
             new_cost = cost + graph[node][neighbor]
             if costs[neighbor] > new_cost:
                 costs[neighbor] = new_cost

@@ -1,9 +1,10 @@
-# Binary numbers in this program will be binary strings.
-# ex: '101'
-
 def AddTwoBinaries(x,y):
+    """
+    Adds two binary numbers without converting them to decimals.
+    """
     length = max(len(x), len(y))
-    x = x.zfill(length)
+    # zfill pads the shorter string with zeroes
+    x = x.zfill(length) 
     y = y.zfill(length)
     carry = 0
     output = ''
@@ -16,12 +17,15 @@ def AddTwoBinaries(x,y):
     return output
 
 def AddMultipleBinaries(binaries):
+    """
+    Uses divide and conquer to recursively find the sum of multiple binary numbers.
+    """
     if len(binaries) == 1:
         return binaries[0]
         
     mid = len(binaries) // 2
-    left = AddMultipleBinaries(binaries[:mid])
-    right = AddMultipleBinaries(binaries[mid:])
+    left = AddMultipleBinaries(binaries[:mid]) # Exclusive; excludes mid
+    right = AddMultipleBinaries(binaries[mid:]) # Inclusive; includes mid
     
     return AddTwoBinaries(left, right)
     

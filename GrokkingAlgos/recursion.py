@@ -1,5 +1,5 @@
 def factorial_recursive(num):
-    if num <= 1: #In case somebody inputs 0.
+    if num <= 1: # In case somebody inputs 0.
         return 1
     return num * factorial_recursive(num - 1)   
 

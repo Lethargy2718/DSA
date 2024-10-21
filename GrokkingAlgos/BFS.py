@@ -11,6 +11,9 @@ graph = {
 }
 
 def BFS(target, graph):
+    """
+    A breadth-first search implementation to check the existance of a node in a graph.
+    """
     start='you'
     steps_taken = 0
     search_queue = deque()

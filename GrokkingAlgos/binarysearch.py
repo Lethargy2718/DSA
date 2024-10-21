@@ -1,7 +1,9 @@
 import sys
 
 def binary_search(target, data: list):
-    # O(logn)
+    """
+    Binary search implementation to find a number in a list.
+    """
     low  = 0
     high = len(data) - 1
     tries = 0
