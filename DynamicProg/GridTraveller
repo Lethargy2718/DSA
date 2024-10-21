@@ -1,0 +1,12 @@
+def gridTraveller(m,n, dp = {}):
+    if (m,n) in dp:
+        return dp[(m,n)]
+    if m == n == 1:
+        return 1
+    elif m == 0 or n == 0:
+        return 0
+    dp[(m,n)] = gridTraveller(m - 1, n, dp) + gridTraveller(m, n - 1, dp)
+    return dp[(m,n)]
+
+result = gridTraveller(100,100)
+print(result)
