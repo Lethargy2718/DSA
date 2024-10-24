@@ -1,0 +1,16 @@
+def TargetSum(target, nums, dp = {}):
+    if target in dp:
+        return dp[target]
+    if target == 0:
+        return True
+    if target < 0:
+        return False
+    
+    for i, num in enumerate(nums):
+        dp[target] = TargetSum(target - num, nums, dp)
+        if dp[target]: 
+            return True   
+    return False    
+
+
+print(TargetSum(20, [7,2,6,8]))
