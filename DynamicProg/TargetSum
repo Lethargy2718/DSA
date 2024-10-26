@@ -1,4 +1,9 @@
 def TargetSum(target, nums, dp = {}):
+    """
+    Checks if it's possible to form the target number
+    by summing the provided numbers using memoization.
+    (without using the same number twice)
+    """
     if target in dp:
         return dp[target]
     if target == 0:
