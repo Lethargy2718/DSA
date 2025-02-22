@@ -90,10 +90,10 @@ class LinkedList {
         return false;
     }
 
-    find(value) {
+    find(index = false, value, callback = (node, value) => node.value === value) {
         let currentIndex = 0, currentNode = this.head;
         while (currentNode) {
-            if (currentNode.value === value) return currentIndex;
+            if (callback(currentNode, value)) return index?currentIndex:currentNode;
             currentIndex++;
             currentNode = currentNode.next;
         }
@@ -164,5 +164,15 @@ class LinkedList {
         }
 
         return null;
+    }
+
+    toArray() {
+        let arr = []
+        let currentNode = this.head;
+        while(currentNode) {
+            arr.push(currentNode.value);
+            currentNode = currentNode.next;
+        }
+        return arr;
     }
 }
