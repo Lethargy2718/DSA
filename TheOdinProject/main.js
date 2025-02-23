@@ -1,19 +1,11 @@
+import { mergeSort } from "./merge-sort.js";
 import { LinkedList } from "./linked-list.js";
 import { HashMap } from "./hashmap.js";
+import { Tree } from "./binary-search-tree.js";
 
-const map = new HashMap();
-
-map.set('apple', 'red')
-map.set('banana', 'yellow')
-map.set('carrot', 'orange')
-map.set('dog', 'brown')
-map.set('elephant', 'gray')
-map.set('frog', 'green')
-map.set('grape', 'purple')
-map.set('hat', 'black')
-map.set('ice cream', 'white')
-map.set('jacket', 'blue')
-map.set('kite', 'pink')
-map.set('lion', 'golden')
-
-console.log(map.entries());
+const arr = [];
+let n = Math.pow(2, 12) + 1;
+while (n--) arr.push(n);
+const tree = new Tree(arr);
+tree.delete(4096);
+tree.prettyPrint();
