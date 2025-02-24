@@ -8,7 +8,6 @@ class HashMap {
         this.load = 0;
         this.buckets = [];
     }
-    
 
     set(key, value) {
         const code = this.hash(key);
@@ -121,6 +120,4 @@ class HashMap {
             list?.forEach(node => this.set(node.value[0], node.value[1]));
         });
     }
-     
 }
-
