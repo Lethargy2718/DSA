@@ -2,6 +2,7 @@ import { mergeSort } from "./merge-sort.js";
 import { LinkedList } from "./linked-list.js";
 import { HashMap } from "./hashmap.js";
 import { Tree } from "./binary-search-tree.js";
+import { knightsTravails } from "./knights-travails.js";
 
 /* Generate a BST of random values. */
 
@@ -50,11 +51,14 @@ tree.prettyPrint(); // O(N)
 
 /* Rebalance the tree. */
 if (!bal) {
+    console.log("---------------");
     console.log("Rebalancing tree...");
     tree.rebalance(); // O(N + N) = O(N)
+    console.log("---------------");
 
     // Confirm the tree is balanced again.
     console.log("Is the tree balanced after rebalancing?", tree.isBalanced()); // O(N)
+    tree.prettyPrint(); // O(N)
 }
 
 console.log("---------------");
@@ -76,6 +80,13 @@ tree.postOrder(node => console.log(node.value));
 
 console.log("---------------");
 
-/* Visualize the tree */
-console.log("Result:");
-tree.prettyPrint(); // O(N)
+/******************/
+
+/* Find the shortest path for a knight on a chessboard */
+
+const start = [0,0];
+const end = [7,7];
+
+const path = knightsTravails(start, end);
+console.log(`A knight takes ${path.length - 1} steps to go from ${start} to ${end}`)
+console.log(path);
